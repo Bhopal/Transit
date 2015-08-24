@@ -276,6 +276,45 @@ angular.module('your_app_name', [
     }
   })
 
+  .state('app.map', {
+    url: "/maps",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/maps/map.html"
+      }
+    }
+  })
+
+  .state('app.map1', {
+    url: "/maps/map1",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/maps/map1.html",
+        controller: 'Map1Ctrl'
+      }
+    }
+  })
+
+  .state('app.map2', {
+    url: "/maps/map2",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/maps/map2.html",
+        controller: 'Map2Ctrl'
+      }
+    }
+  })
+
+  .state('app.map3', {
+    url: "/maps/map3",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/maps/map3.html",
+        controller: 'Map3Ctrl'
+      }
+    }
+  })
+
 ;
 
   // if none of the above states are matched, use this as the fallback
