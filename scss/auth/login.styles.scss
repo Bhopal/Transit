@@ -23,7 +23,7 @@
 		{
 			font-weight: bold;
 			text-transform: uppercase;
-			background: $auth-tabs-bg;
+			background: #D71923;
 			color: $auth-tabs-color;
 			@include transition(all 0.1s ease);
 		}
@@ -34,7 +34,7 @@
 			margin-top: 0;
 			margin-bottom: -2px;
 			border-width: 0px 0px 4px 0px !important;
-			border-color: $auth-tabs-highlight !important;
+			border-color: #E23546 !important;
 			border-style: solid;
 		}
 	}
