@@ -1,0 +1,230 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'c:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'angular-sweetnotifier',
+1 verbose cli   '-g' ]
+2 info using npm@2.10.1
+3 info using node@v0.12.4
+4 verbose install initial load of C:\Users\DellUser\AppData\Roaming\npm\package.json
+5 verbose readDependencies loading dependencies from C:\Users\DellUser\AppData\Roaming\npm\package.json
+6 silly cache add args [ 'angular-sweetnotifier', null ]
+7 verbose cache add spec angular-sweetnotifier
+8 silly cache add parsed spec { raw: 'angular-sweetnotifier',
+8 silly cache add   scope: null,
+8 silly cache add   name: 'angular-sweetnotifier',
+8 silly cache add   rawSpec: '',
+8 silly cache add   spec: '*',
+8 silly cache add   type: 'range' }
+9 silly addNamed angular-sweetnotifier@*
+10 verbose addNamed "*" is a valid semver range for angular-sweetnotifier
+11 silly addNameRange { name: 'angular-sweetnotifier', range: '*', hasData: false }
+12 silly mapToRegistry name angular-sweetnotifier
+13 silly mapToRegistry using default registry
+14 silly mapToRegistry registry https://registry.npmjs.org/
+15 silly mapToRegistry uri https://registry.npmjs.org/angular-sweetnotifier
+16 verbose addNameRange registry:https://registry.npmjs.org/angular-sweetnotifier not in flight; fetching
+17 verbose request uri https://registry.npmjs.org/angular-sweetnotifier
+18 verbose request no auth needed
+19 info attempt registry request try #1 at 11:36:29 AM
+20 verbose request id fce978f29e1920a0
+21 http request GET https://registry.npmjs.org/angular-sweetnotifier
+22 http 200 https://registry.npmjs.org/angular-sweetnotifier
+23 silly get cb [ 200,
+23 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+23 silly get     etag: '"XYJC9PGWYIHI65D2E9SBT3KM"',
+23 silly get     'content-type': 'application/json',
+23 silly get     'cache-control': 'max-age=60',
+23 silly get     'content-length': '3738',
+23 silly get     'accept-ranges': 'bytes',
+23 silly get     date: 'Fri, 28 Aug 2015 06:06:22 GMT',
+23 silly get     via: '1.1 varnish',
+23 silly get     age: '0',
+23 silly get     connection: 'keep-alive',
+23 silly get     'x-served-by': 'cache-sin6922-SIN',
+23 silly get     'x-cache': 'MISS',
+23 silly get     'x-cache-hits': '0',
+23 silly get     'x-timer': 'S1440741982.545333,VS0,VE209',
+23 silly get     vary: 'Accept' } ]
+24 verbose get saving angular-sweetnotifier to C:\Users\DellUser\AppData\Roaming\npm-cache\registry.npmjs.org\angular-sweetnotifier\.cache.json
+25 silly addNameRange number 2 { name: 'angular-sweetnotifier', range: '*', hasData: true }
+26 silly addNameRange versions [ 'angular-sweetnotifier', [ '2.0.1', '2.0.2' ] ]
+27 silly addNamed angular-sweetnotifier@2.0.2
+28 verbose addNamed "2.0.2" is a plain semver version for angular-sweetnotifier
+29 silly mapToRegistry name angular-sweetnotifier
+30 silly mapToRegistry using default registry
+31 silly mapToRegistry registry https://registry.npmjs.org/
+32 silly mapToRegistry uri https://registry.npmjs.org/angular-sweetnotifier
+33 verbose addRemoteTarball https://registry.npmjs.org/angular-sweetnotifier/-/angular-sweetnotifier-2.0.2.tgz not in flight; adding
+34 verbose addRemoteTarball [ 'https://registry.npmjs.org/angular-sweetnotifier/-/angular-sweetnotifier-2.0.2.tgz',
+34 verbose addRemoteTarball   '2175d55b7ca1f665b63156dc645cba17baa91336' ]
+35 info retry fetch attempt 1 at 11:36:29 AM
+36 info attempt registry request try #1 at 11:36:29 AM
+37 http fetch GET https://registry.npmjs.org/angular-sweetnotifier/-/angular-sweetnotifier-2.0.2.tgz
+38 http fetch 200 https://registry.npmjs.org/angular-sweetnotifier/-/angular-sweetnotifier-2.0.2.tgz
+39 silly fetchAndShaCheck shasum 2175d55b7ca1f665b63156dc645cba17baa91336
+40 verbose addTmpTarball C:\Users\DellUser\AppData\Local\Temp\npm-6448-fd75757f\registry.npmjs.org\angular-sweetnotifier\-\angular-sweetnotifier-2.0.2.tgz not in flight; adding
+41 verbose addTmpTarball already have metadata; skipping unpack for angular-sweetnotifier@2.0.2
+42 silly cache afterAdd angular-sweetnotifier@2.0.2
+43 verbose afterAdd C:\Users\DellUser\AppData\Roaming\npm-cache\angular-sweetnotifier\2.0.2\package\package.json not in flight; writing
+44 verbose afterAdd C:\Users\DellUser\AppData\Roaming\npm-cache\angular-sweetnotifier\2.0.2\package\package.json written
+45 silly install resolved [ { name: 'angular-sweetnotifier',
+45 silly install resolved     version: '2.0.2',
+45 silly install resolved     description: 'A simple angular-sweetnotifier',
+45 silly install resolved     main: './dist/angular-sweetnotifier.js',
+45 silly install resolved     repository:
+45 silly install resolved      { type: 'git',
+45 silly install resolved        url: 'git+https://github.com/leftstick/angular-sweetnotifier.git' },
+45 silly install resolved     keywords: [ 'angular', 'notifier' ],
+45 silly install resolved     author: { name: 'Howard.Zuo' },
+45 silly install resolved     license: 'MIT',
+45 silly install resolved     bugs: { url: 'https://github.com/leftstick/angular-sweetnotifier/issues' },
+45 silly install resolved     homepage: 'https://github.com/leftstick/angular-sweetnotifier',
+45 silly install resolved     devDependencies:
+45 silly install resolved      { gulp: '^3.9.0',
+45 silly install resolved        'gulp-less': '^3.0.3',
+45 silly install resolved        'gulp-rename': '^1.2.2',
+45 silly install resolved        'gulp-template': '^3.0.0',
+45 silly install resolved        'gulp-uglify': '^1.2.0',
+45 silly install resolved        'gulp-webserver': '^0.9.1',
+45 silly install resolved        'less-plugin-autoprefix': '^1.4.2',
+45 silly install resolved        'less-plugin-clean-css': '^1.5.0' },
+45 silly install resolved     gitHead: '317e4bd54496df40d8ae4170960607dbce536ddf',
+45 silly install resolved     _id: 'angular-sweetnotifier@2.0.2',
+45 silly install resolved     scripts: {},
+45 silly install resolved     _shasum: '2175d55b7ca1f665b63156dc645cba17baa91336',
+45 silly install resolved     _from: 'angular-sweetnotifier@*',
+45 silly install resolved     _npmVersion: '2.12.1',
+45 silly install resolved     _nodeVersion: '0.12.6',
+45 silly install resolved     _npmUser: { name: 'howard.zuo', email: 'leftstick@qq.com' },
+45 silly install resolved     dist:
+45 silly install resolved      { shasum: '2175d55b7ca1f665b63156dc645cba17baa91336',
+45 silly install resolved        tarball: 'http://registry.npmjs.org/angular-sweetnotifier/-/angular-sweetnotifier-2.0.2.tgz' },
+45 silly install resolved     maintainers: [ [Object] ],
+45 silly install resolved     directories: {},
+45 silly install resolved     _resolved: 'https://registry.npmjs.org/angular-sweetnotifier/-/angular-sweetnotifier-2.0.2.tgz' } ]
+46 info install angular-sweetnotifier@2.0.2 into C:\Users\DellUser\AppData\Roaming\npm
+47 info installOne angular-sweetnotifier@2.0.2
+48 verbose installOne of angular-sweetnotifier to C:\Users\DellUser\AppData\Roaming\npm not in flight; installing
+49 verbose lock using C:\Users\DellUser\AppData\Roaming\npm-cache\_locks\angular-sweetnotifier-793089f7479b1b2e.lock for C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+50 silly install write writing angular-sweetnotifier 2.0.2 to C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+51 verbose unbuild node_modules\angular-sweetnotifier
+52 silly gentlyRm C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier is being purged from base C:\Users\DellUser\AppData\Roaming\npm
+53 verbose gentlyRm don't care about contents; nuking C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+54 verbose tar unpack C:\Users\DellUser\AppData\Roaming\npm-cache\angular-sweetnotifier\2.0.2\package.tgz
+55 verbose tar unpacking to C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+56 silly gentlyRm C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier is being purged
+57 verbose gentlyRm don't care about contents; nuking C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+58 silly gunzTarPerm modes [ '777', '666' ]
+59 silly gunzTarPerm extractEntry package.json
+60 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+61 silly gunzTarPerm extractEntry .npmignore
+62 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+63 silly gunzTarPerm extractEntry README.md
+64 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+65 silly gunzTarPerm extractEntry LICENSE
+66 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+67 silly gunzTarPerm extractEntry gulpfile.js
+68 silly gunzTarPerm modified mode [ 'gulpfile.js', 420, 438 ]
+69 silly gunzTarPerm extractEntry demo/angular-sweetnotifier.js
+70 silly gunzTarPerm modified mode [ 'demo/angular-sweetnotifier.js', 420, 438 ]
+71 silly gunzTarPerm extractEntry demo/demo.js
+72 silly gunzTarPerm modified mode [ 'demo/demo.js', 420, 438 ]
+73 silly gunzTarPerm extractEntry demo/prism.js
+74 silly gunzTarPerm modified mode [ 'demo/prism.js', 420, 438 ]
+75 silly gunzTarPerm extractEntry demo/demo.css
+76 silly gunzTarPerm modified mode [ 'demo/demo.css', 420, 438 ]
+77 silly gunzTarPerm extractEntry demo/sweetnotifier.woff
+78 silly gunzTarPerm modified mode [ 'demo/sweetnotifier.woff', 420, 438 ]
+79 silly gunzTarPerm extractEntry demo/img/favicon.ico
+80 silly gunzTarPerm modified mode [ 'demo/img/favicon.ico', 420, 438 ]
+81 silly gunzTarPerm extractEntry demo/index.html
+82 silly gunzTarPerm modified mode [ 'demo/index.html', 420, 438 ]
+83 silly gunzTarPerm extractEntry demo/angular-sweetnotifier.min.css
+84 silly gunzTarPerm modified mode [ 'demo/angular-sweetnotifier.min.css', 420, 438 ]
+85 silly gunzTarPerm extractEntry demo/sweetnotifier.css
+86 silly gunzTarPerm modified mode [ 'demo/sweetnotifier.css', 420, 438 ]
+87 silly gunzTarPerm extractEntry demo/sweetnotifier.eot
+88 silly gunzTarPerm modified mode [ 'demo/sweetnotifier.eot', 420, 438 ]
+89 silly gunzTarPerm extractEntry demo/sweetnotifier.svg
+90 silly gunzTarPerm modified mode [ 'demo/sweetnotifier.svg', 420, 438 ]
+91 silly gunzTarPerm extractEntry demo/sweetnotifier.ttf
+92 silly gunzTarPerm modified mode [ 'demo/sweetnotifier.ttf', 420, 438 ]
+93 silly gunzTarPerm extractEntry demo/prism.css
+94 silly gunzTarPerm modified mode [ 'demo/prism.css', 420, 438 ]
+95 silly gunzTarPerm extractEntry bower.json
+96 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+97 silly gunzTarPerm extractEntry dist/angular-sweetnotifier.js
+98 silly gunzTarPerm modified mode [ 'dist/angular-sweetnotifier.js', 420, 438 ]
+99 silly gunzTarPerm extractEntry dist/angular-sweetnotifier.min.js
+100 silly gunzTarPerm modified mode [ 'dist/angular-sweetnotifier.min.js', 420, 438 ]
+101 silly gunzTarPerm extractEntry dist/angular-sweetnotifier.min.css
+102 silly gunzTarPerm modified mode [ 'dist/angular-sweetnotifier.min.css', 420, 438 ]
+103 silly gunzTarPerm extractEntry dist/sweetnotifier.eot
+104 silly gunzTarPerm modified mode [ 'dist/sweetnotifier.eot', 420, 438 ]
+105 silly gunzTarPerm extractEntry dist/sweetnotifier.svg
+106 silly gunzTarPerm modified mode [ 'dist/sweetnotifier.svg', 420, 438 ]
+107 silly gunzTarPerm extractEntry dist/sweetnotifier.ttf
+108 silly gunzTarPerm modified mode [ 'dist/sweetnotifier.ttf', 420, 438 ]
+109 silly gunzTarPerm extractEntry dist/sweetnotifier.woff
+110 silly gunzTarPerm modified mode [ 'dist/sweetnotifier.woff', 420, 438 ]
+111 silly gunzTarPerm extractEntry docs/img/demo.png
+112 silly gunzTarPerm modified mode [ 'docs/img/demo.png', 420, 438 ]
+113 silly gunzTarPerm extractEntry .bowerrc
+114 silly gunzTarPerm modified mode [ '.bowerrc', 420, 438 ]
+115 silly gunzTarPerm extractEntry .jshintrc
+116 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+117 silly gunzTarPerm extractEntry src/angular-sweetnotifier.js
+118 silly gunzTarPerm modified mode [ 'src/angular-sweetnotifier.js', 420, 438 ]
+119 silly gunzTarPerm extractEntry src/angular-sweetnotifier.html
+120 silly gunzTarPerm modified mode [ 'src/angular-sweetnotifier.html', 420, 438 ]
+121 silly gunzTarPerm extractEntry src/angular-sweetnotifier.less
+122 silly gunzTarPerm modified mode [ 'src/angular-sweetnotifier.less', 420, 438 ]
+123 silly gunzTarPerm extractEntry src/sweetnotifier.eot
+124 silly gunzTarPerm modified mode [ 'src/sweetnotifier.eot', 420, 438 ]
+125 silly gunzTarPerm extractEntry src/sweetnotifier.less
+126 silly gunzTarPerm modified mode [ 'src/sweetnotifier.less', 420, 438 ]
+127 silly gunzTarPerm extractEntry src/sweetnotifier.svg
+128 silly gunzTarPerm modified mode [ 'src/sweetnotifier.svg', 420, 438 ]
+129 silly gunzTarPerm extractEntry src/sweetnotifier.ttf
+130 silly gunzTarPerm modified mode [ 'src/sweetnotifier.ttf', 420, 438 ]
+131 silly gunzTarPerm extractEntry src/sweetnotifier.woff
+132 silly gunzTarPerm modified mode [ 'src/sweetnotifier.woff', 420, 438 ]
+133 verbose write writing to C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier\package.json
+134 info preinstall angular-sweetnotifier@2.0.2
+135 verbose readDependencies loading dependencies from C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier\package.json
+136 verbose readDependencies loading dependencies from C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier\package.json
+137 silly install resolved []
+138 verbose about to build C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+139 info build C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+140 info linkStuff angular-sweetnotifier@2.0.2
+141 silly linkStuff angular-sweetnotifier@2.0.2 has C:\Users\DellUser\AppData\Roaming\npm\node_modules as its parent node_modules
+142 silly linkStuff angular-sweetnotifier@2.0.2 is part of a global install
+143 silly linkStuff angular-sweetnotifier@2.0.2 is installed into a global node_modules
+144 silly linkStuff angular-sweetnotifier@2.0.2 is installed into the top-level global node_modules
+145 verbose linkBins angular-sweetnotifier@2.0.2
+146 verbose linkMans angular-sweetnotifier@2.0.2
+147 verbose rebuildBundles angular-sweetnotifier@2.0.2
+148 info install angular-sweetnotifier@2.0.2
+149 info postinstall angular-sweetnotifier@2.0.2
+150 verbose unlock done using C:\Users\DellUser\AppData\Roaming\npm-cache\_locks\angular-sweetnotifier-793089f7479b1b2e.lock for C:\Users\DellUser\AppData\Roaming\npm\node_modules\angular-sweetnotifier
+151 verbose validateInstall loading C:\Users\DellUser\AppData\Roaming\npm\package.json for validation
+152 verbose stack Error: read ECONNRESET
+152 verbose stack     at exports._errnoException (util.js:746:11)
+152 verbose stack     at TCP.onread (net.js:559:26)
+153 verbose cwd g:\EnvatoCodecanyon\Transit
+154 error Windows_NT 6.1.7600
+155 error argv "c:\\Program Files\\nodejs\\node.exe" "c:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "angular-sweetnotifier" "-g"
+156 error node v0.12.4
+157 error npm  v2.10.1
+158 error code ECONNRESET
+159 error errno ECONNRESET
+160 error syscall read
+161 error network read ECONNRESET
+161 error network This is most likely not a problem with npm itself
+161 error network and is related to network connectivity.
+161 error network In most cases you are behind a proxy or have bad network settings.
+161 error network
+161 error network If you are behind a proxy, please make sure that the
+161 error network 'proxy' config is set properly.  See: 'npm help config'
+162 verbose exit [ 1, true ]

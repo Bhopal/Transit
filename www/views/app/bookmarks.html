@@ -1,17 +1,17 @@
 <ion-view class="bookmarks-view">
   <ion-nav-title>
-    <span>Bookmarks</span>
+    <span>Booking</span>
   </ion-nav-title>
   <ion-content>
-    <div ng-if="(bookmarks.wordpress.length == 0 && bookmarks.feeds.length == 0)" class="row bookmarks-container">
+    <!-- <div ng-if="(bookmarks.wordpress.length == 0 && bookmarks.feeds.length == 0)" class="row bookmarks-container">
       <div class="col col-center">
         <div class="empty-results">
           <i class="icon ion-bookmark"></i>
           <h3 class="no-bookmarks">There's nothing here yet. Start exploring!</h3>
         </div>
       </div>
-    </div>
-    <ul ng-if="(bookmarks.wordpress.length > 0 || bookmarks.feeds.length > 0)" class="bookmarks-list">
+    </div> -->
+    <!-- <ul ng-if="(bookmarks.wordpress.length > 0 || bookmarks.feeds.length > 0)" class="bookmarks-list">
       <div ng-if="bookmarks.feeds.length > 0" class="item item-divider">
         Feeds Bookmarks
       </div>
@@ -30,6 +30,176 @@
           <p class="post-date">Posted <span class="post-time" am-time-ago="bookmark.date"></span></p>
         </a>
       </li>
-    </ul>
+    </ul> -->
+
+    <div class="resources-content" ng-show="!showFlights">
+        <div id="wego-searchbox">
+            <div id="wg-form" class="ui-resizable wg-wr wg-ico-red wg-420" style="width:400px">
+                <div id="wrap" class="wego-container">
+                    <ul class="tabs wego-ui-tabs" style="display: none;">
+                        <li class="hotels-tab ">
+                            <a href="#hotels-form">
+                                <h2 class="icon hotels" style="border-radius: 1px 1px 0px 0px">Hotels</h2> </a>
+                        </li>
+                        <li class="flights-tab wego-selected">
+                            <a href="#flights-form">
+                                <h2 class="icon flights" style="border-radius: 1px 1px 0px 0px">Flights</h2> </a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" style="border-radius:1px">
+                        <div class="wan-logo" style="display: none"> </div>
+                        <!--- hotels -->
+                        <div id="hotels-form" style="display: none;">
+                            <form action="http://www.wego.com/hotels/search/create" class="form" id="wego-hotels-searchform" target="_blank">
+                                <fieldset>
+                                    <ul class="wego-unstyled">
+                                        <li class="wego-stacked wego-stacked-l wg-first"> City
+                                            <br>
+                                            <input type="text" class="wego-text wego-location ui-autocomplete-input" name="search[query]" placeholder="Location" value="" data-value="" required="" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true"> </li>
+                                        <li class="wego-stacked wego-stacked-l wego-datepicker wego-inline wego-datepicker-checkin">Check-in
+                                            <br>
+                                            <input type="text" class="wego-text wego-checkin hasDatepicker" "=" " name="search[check_in] " id="dp1440744580406 "></li> <li class="wego-stacked wego-stacked-l wego-datepicker wego-inline wego-datepicker-checkout ">Check-out<br> <input type="text " class="wego-text wego-checkout hasDatepicker " "="" name="search[check_out]" id="dp1440744580407">
+                                        </li>
+                                        <li class="wego-stacked wego-stacked-s wego-faux-stacked-l">
+                                            <div class="wg-select">
+                                                <h3 class="wg-text icon-guest">Guests</h3> <span class="wg-select-moz"> <span class="select-wg_search_guests">2</span>
+                                                <select id="wg_search_guests" class="wego-select-box faux-select" name="search[guests]">
+                                                    <option value="1">1</option>
+                                                    <option value="2" selected="">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                                </span>
+                                            </div>
+                                            <div class="wg-select">
+                                                <h3 class="wg-text icon-rooms">Rooms</h3> <span class="wg-select-moz"> <span class="select-wg_rooms">1</span>
+                                                <select id="wg_rooms" class="wego-select-box faux-select" name="search[rooms]">
+                                                    <option value="1" selected="">1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                                    <option value="6">6</option>
+                                                    <option value="7">7</option>
+                                                    <option value="8">8</option>
+                                                    <option value="9">9</option>
+                                                    <option value="10">10</option>
+                                                </select>
+                                                </span>
+                                            </div>
+                                        </li>
+                                        <input type="hidden" class="wego-location-code" name="search[location_id]" value="" data-value="">
+                                        <input type="hidden" class="wego-district-id" name="search[district_id]" value="">
+                                        <input type="hidden" class="wego-property-code" name="search[property_id]" value="">
+                                        <input type="hidden" class="wego-property-name" name="search[property_name]" value="search">
+                                        <input type="hidden" class="wego-locale" name="wg-locale" value="en">
+                                        <input type="hidden" class="wego-def-location" name="wg-def-location" value="">
+                                        <input type="hidden" class="wego-sub-id" name="sub_id" value="">
+                                        <input type="hidden" class="wego-ts-code" name="ts_code" value="e05bf">
+                                        <input type="hidden" id="white-label" value="0">
+                                        <div class="wego-form-footer">
+                                            <div class="wan-logo" style="display: none"> </div>
+                                            <h3 class="quote-text">Search &amp; Compare 700 Travel Sites!</h3>
+                                            <br>
+                                            <input type="submit" id="search-button" class="search-button" value="Search"> </div>
+                                    </ul>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <!-- end Hotels -->
+                        <!--- flights -->
+                        <div id="flights-form" style="display: block;">
+                            <form action="http://www.wego.com/flights/search" class="form" id="wego-flights-searchform" target="_blank">
+                                <fieldset>
+                                    <ul class="wego-unstyled">
+                                        <li class="wego-stacked wego-stacked-l wg-first">
+                                            <h4 class="wg-from">From</h4>
+                                            <input type="text" class="wego-text wego-from ui-autocomplete-input" name="wg_origin" value="New York , NY, United States (NYC)" data-value="" placeholder="From" required="" autocorrect="off" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+                                        </li>
+                                        <div class="arrow"> </div>
+                                        <li class="wego-stacked wego-stacked-l wg-right">
+                                            <h4 class="wg-to">To</h4>
+                                            <input type="text" class="wego-text wego-to ui-autocomplete-input ui-autocomplete-loading" name="wg_destination" required="" autocorrect="off" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true" data-destination-name="" placeholder="To"  value="Sydney, NSW, Australia (SYD)">
+                                        </li>
+                                        <li class="wg-second wego-stacked wego-stacked-l wego-datepicker wego-inline wego-datepicker-depart">
+                                            
+                                            <input type="text" class="wego-text wego-depart hasDatepicker" "=" " name="wg_outbound_date " id="dp1440744580404 " value="17/09/2015"> </li> <li class="wego-stacked wego-stacked-l wego-datepicker wg-right wego-inline mrg-return "><br> <input type="text " class="wego-text wego-return hasDatepicker " "="" name="wg_inbound_date" style="visibility: hidden; display: none;" id="dp1440744580405" disabled=""> </li>
+                                        <li class="wego-stacked wego-stacked-s wego-faux-stacked-s" style="visibility: visible;">
+                                            <div class="wg-select adult">
+                                                <h3 class="wg-text icon-adult"></h3> <span class="wg-select-moz"> <span class="select-wg_adult">1</span>
+                                                <select id="wg_adult" class="faux-select" name="wg_adult">
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                </select>
+                                                </span>
+                                            </div>
+                                            <div class="wg-select child">
+                                                <h3 class="wg-text icon-child"></h3> <span class="wg-select-moz"> <span class="select-wg_children">0</span>
+                                                <select id="wg_children" class="faux-select" name="wg_children">
+                                                    <option>0</option>
+                                                    <option>1</option>
+                                                    <option>2</option>
+                                                    <option>3</option>
+                                                    <option>4</option>
+                                                    <option>5</option>
+                                                    <option>6</option>
+                                                    <option>7</option>
+                                                    <option>8</option>
+                                                    <option>9</option>
+                                                </select>
+                                                </span>
+                                            </div>
+                                            <div class="wg-select cabin">
+                                                <h3 class="wg-text icon-cabin">Cabin Class</h3> <span class="wg-select-moz"> <span class="select-wg_cabin_class">Business</span>
+                                                <select id="wg_cabin_class" name="wg_cabin_class" class="faux-select">
+                                                    <option value="economy" selected="selected">Economy</option>
+                                                    <option value="business">Business</option>
+                                                    <option value="first">First</option>
+                                                </select>
+                                                </span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                    <input type="hidden" class="wego-from-code" name="wg_from" value="NYC" data-value="">
+                                    <input type="hidden" class="wego-to-code" name="wg_to" value="SYD" data-value="">
+                                    <input type="hidden" class="wego-ts-code" name="ts_code" value="e05bf">
+                                    <input type="hidden" class="wego-locale" name="wg-locale" value="en">
+                                    <input type="hidden" class="wego-def-from ui-autocomplete-input" name="wg-def-from" value="" autocorrect="off" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                    <input type="hidden" class="wego-def-to ui-autocomplete-input" name="wego-def-to" value="" autocorrect="off" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span>
+                                    <input type="hidden" class="wego-sub-id" name="sub_id" value="">
+                                    <input type="hidden" class="wg_trip_type" name="wg_trip_type" value="false">
+                                    <input type="hidden" id="white-label" value="0">
+                                    <div class="wego-form-footer">
+                                        <div class="wan-logo" style="display: none"> </div>
+                                        <h3 class="quote-text">Search &amp; Compare 700 Travel Sites!</h3>
+                                        <br>
+                                        <input type="submit" id="search-button" class="search-button" value="Search" ui-sref="app.bookmarks_"> </div>
+                                </fieldset>
+                            </form>
+                        </div>
+                        <!-- end flights -->
+                    </div>
+                </div>
+                <div class="ui-resizable-handle ui-resizable-e" style="z-index: 1000;"> </div>
+                <div class="ui-resizable-handle ui-resizable-s" style="z-index: 1000;"> </div>
+                <div class="ui-resizable-handle ui-resizable-se ui-icon ui-icon-gripsmall-diagonal-se" style="z-index: 1000; display: block;"> </div>
+            </div>
+        </div>
+    </div>
+    <div class=" flight-details" ng-show="showFlights">
+    </div>
   </ion-content>
 </ion-view>

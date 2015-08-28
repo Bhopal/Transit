@@ -12,7 +12,8 @@ angular.module('your_app_name.controllers', [])
 //LOGIN
 .controller('LoginCtrl', function($scope, $state, $templateCache, $q, $rootScope) {
 	$scope.doLogIn = function(){
-		$state.go('app.feeds-categories');
+		//$state.go('app.feeds-categories');
+		$state.go('app.bookmarks');
 	};
 
 	$scope.user = {};
@@ -28,6 +29,8 @@ angular.module('your_app_name.controllers', [])
 	});
 
 })
+
+
 
 .controller('SignupCtrl', function($scope, $state) {
 	$scope.user = {};
@@ -60,6 +63,47 @@ angular.module('your_app_name.controllers', [])
 		}
 	};
 })
+
+.controller('FormCtrl', function($scope) {
+	$scope.destnHead = [
+		{name:'Burj Khalifa', longitude:25.191964, latitude:55.277456, imgSrc:'burj-khalifa.jpg'},
+		{name:'Deira Clock Tower', longitude:25.2586, latitude:55.3264, imgSrc:'clock-tower.jpg'},
+		{name:'Dubai Museum', longitude:25.2631, latitude:55.2972, imgSrc:'dubai-museum.jpg'},		
+		{name:'Jumeriah beach', longitude:25.191964, latitude:55.277456, imgSrc:'jumeirah-beach.jpg'},
+		{name:'Ferrari World', longitude:25.2586, latitude:55.3264, imgSrc:'ferrari-world.jpg'},
+		{name:'Burj Al Arab', longitude:25.2631, latitude:55.2972, imgSrc:'al-arab.jpg'},
+		{name:'Sheikh Zayed Mosque', longitude:25.191964, latitude:55.277456, imgSrc:'masjid.jpg'},
+		{name:'Dubai Mall', longitude:25.2586, latitude:55.3264, imgSrc:'dubai-mall.jpg'},
+		{name:'Dubai World Trade Centre', longitude:25.2631, latitude:55.2972, imgSrc:'wtc.jpg'}
+		
+	];
+
+	$scope.loc={longitude:40.740, latitude:-74.18};
+	
+	$scope.loadMap = function loadMap(obj) {
+		var pano;
+		var latlng = new google.maps.LatLng(obj.longitude, obj.latitude);
+		var panoOptions = {
+		    position: latlng,
+		    pov: {
+		        heading: 0,
+		        pitch: 0
+		    }
+		};
+		pano = new google.maps.StreetViewPanorama(
+		    document.getElementById('expmapid'), 
+		    panoOptions);
+		window.setInterval(function() {
+		    var pov = pano.getPov();
+		    pov.heading += 0.2;
+		    pano.setPov(pov);
+		}, 10);
+	}
+	//init map 
+	$scope.loadMap($scope.loc);
+
+})
+
 
 .controller('SendMailCtrl', function($scope) {
 	$scope.sendMail = function(){
@@ -204,9 +248,9 @@ angular.module('your_app_name.controllers', [])
 })
 
 //bring specific category providers
-.controller('CategoryFeedsCtrl', function($scope, $http, $stateParams) {
+//bring specific category providers
+.controller('CategoryFeedsCtrl', function($scope, $http, $stateParams,$ionicPopup,$timeout) {
 	$scope.category_sources = [];
-
 	$scope.categoryId = $stateParams.categoryId;
 
 	$http.get('feeds-categories.json').success(function(response) {
@@ -214,7 +258,28 @@ angular.module('your_app_name.controllers', [])
 		$scope.categoryTitle = category.title;
 		$scope.category_sources = category.feed_sources;
 	});
+
+
+	// Triggered on a button click, or some other target
+$scope.showPopup = function(url) {
+  $scope.data = {}
+
+  var myPopup = $ionicPopup.show({
+    template: '<iframe width="230" height="200" src='+url+' frameborder="0" allowfullscreen></iframe>',
+    title: 'Play Video',
+    subTitle: 'View the complete overview of the destination',
+    scope: $scope,
+    buttons: [
+      { text: 'Close Video' }
+    ]
+  });
+  myPopup.then(function(res) {
+    console.log('Tapped!', res);
+  });
+ 
+ };
 })
+
 
 //this method brings posts for a source provider
 .controller('FeedEntriesCtrl', function($scope, $stateParams, $http, FeedList, $q, $ionicLoading, BookMarkService) {
@@ -366,7 +431,23 @@ angular.module('your_app_name.controllers', [])
 	$scope.goToWordpressPost = function(postId){
 		$state.go('app.post', {postId: postId});
 	};
+	
 })
+
+// FlightResult
+.controller('FlightSearchResultCtrl', function($scope, $rootScope, BookMarkService, $state) {
+
+	$scope.flightRes = {
+			transitTime:{h:13,m:15},
+			destnFrom:'New York(JFK)',
+			destnTo:'Sydney(SYD)',
+		    incomingFlightNo:'EK-202',
+		    incomingFlightType:'Airbus A 380',
+		    outgoingFlightNo:'EK-418',
+		    outgoingFlightNo:'Boeing 777-300',
+		}
+})
+
 
 // WORDPRESS
 .controller('WordpressCtrl', function($scope, $http, $ionicLoading, PostService, BookMarkService) {

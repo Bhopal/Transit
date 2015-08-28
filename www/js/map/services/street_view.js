@@ -49,6 +49,9 @@
      *   StreetView.setPanorama(map, panoId);
      */
     var setPanorama = function(map, panoId) {
+      console.log("BHOPAL MAP>>"+map);
+      console.log("BHOPAL panoId>>"+panoId);
+
       var svp = new google.maps.StreetViewPanorama(map.getDiv(), {enableCloseButton: true});
       svp.setPano(panoId);
     };

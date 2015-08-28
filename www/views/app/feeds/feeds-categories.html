@@ -1,14 +1,61 @@
+
 <ion-view class="feeds-categories-view">
   <ion-nav-buttons side="left">
     <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
   </ion-nav-buttons>
   <ion-nav-title>
-    <span>Feeds Categories</span>
+    <span>Select Tour Packages</span>
   </ion-nav-title>
-  <ion-content>
+
+<ion-content>
+     <div class="item item-divider" ng-hide="linkHide1"><a href=""  ng-click="filterShow=true;linkHide1=true;linkHide2=false;">Show Search Filter</a>
+     </div>
+     <div class="item item-divider" ng-hide="linkHide2"><a href=""  ng-click="filterShow=false;linkHide1=false;linkHide2=true;" ng-init="linkHide2=true;">Hide Filter Search</a>
+     </div>
+<div ng-show="filterShow" ng-init="filterShow=false">
+<ul class="list">
+      <label class="item item-input">
+        <span class="input-label">Select Package</span>
+      <select ng-model="search.pkg">
+      <option value="">Select</option>
+      <option>Emirates Luxury Tour</option>
+      <option selected>Emirates City Tour</option>
+      <option>Emirates Luxury Tour</option>
+      <option>Emirates Desert Tour</option>
+      <option>Emirates Ferrrai World Tour</option>
+      <option>Emirates Ski Dubai Tour</option>
+    </select>
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Select Cost From</span>
+         <input type="text" name="volume" min="0" max="1000" ng-model="search.costFrom" placeholder="Enter Cost From">
+      </label>
+    <label class="item item-input">
+        <span class="input-label">Select Cost To</span>
+         <input type="number" name="volume" min="0" max="1000" ng-model="search.costTo" placeholder="Enter Cost To">
+    </label>
+    <label class="item item-input">
+        <span class="input-label">Area Of Interest</span>
+        <select ng-model="search.interest">
+      <option value="">Select</option>    
+      <option>Adventure</option>
+      <option>Luxary</option>
+      <option>Fun</option>
+    </select>
+    </label>
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          <input type="text" placeholder="Dynamic Search..." ng-model="dynamicSearch">
+        </label>
+        <!-- <button class="button button-small" ng-click="  filterShow=false;linkHide1=false;linkHide2=true;">
+          Submit
+        </button> -->
+      </div>
+    </ul>
+</div>
     <div class="row categories-list">
-      <div ng-repeat="category in feeds_categories" class="col col-50">
-        <a class="feed-category" ui-sref="app.category-feeds({categoryId: (category.title | slugify)})">
+      <div ng-repeat="category in feeds_categories|filter:dynamicSearch|filter:search.costFrom|filter:search.costTo|filter:search.pkg|filter:search.interest"  class="col col-50">
+        <a class="feed-category" ui-sref="app.category-feeds({categoryId: (category.id | slugify)})">
           <pre-img ratio="_1_1" helper-class="square-image">
             <img class="category-image" ng-src="{{category.image}}" spinner-on-load>
           </pre-img>

@@ -1,49 +1,84 @@
 [
 	{
-		"id":"news",
-		"title":"News",
-		"image":"img/feeds/news.jpg",
+		"id":"1",
+		"title":"Emirates Luxury Tour (600 AED)",
+		"image":"img/feeds/logos/pkg1.jpg",
+		"price":600,
+		"category":"Luxury",
 		"feed_sources":[
 			{
-				"id":"bbc",
-				"title":"BBC",
-				"description":"The latest stories from the World section of the BBC News web site.",
-				"image":"img/feeds/logos/bbc.jpg",
-				"url":"http://feeds.bbci.co.uk/news/world/rss.xml"
+				"id":"1",
+				"title":"Burj Al Arab Hotel",
+				"description":"Burj Al Arab (Arabic: برج العرب‎‎,Tower of the Arabs) is a luxury hotel located in Dubai, United Arab Emirates. It has been called The world's only 7 star Hotel and is the fourth tallest hotel in the world; however, 39% of its total height is made up of non-occupiable space.[7][8][9] Burj Al Arab stands on an artificial island 280 m (920 ft) from Jumeirah beach and is connected to the mainland by a private curving bridge. The shape of the structure is designed to mimic the sail of a ship. It has a helipad near the roof at a height of 210 m (689 ft) above ground.",
+				"image":"img/feeds/pkg1_1.jpg",
+				"url":"'https://www.youtube.com/embed/Ajk7eXXwATg'"
 			},
 			{
-				"id":"reuters",
-				"title":"Reuters",
-				"description":"Reuters.com is your source for breaking news, business, financial and investing news, including personal finance and stocks. Reuters is the leading global provider of news, financial information and technology solutions to the world's media, financial institutions, businesses and individuals.",
-				"image":"img/feeds/logos/reuters.jpg",
-				"url":"http://feeds.reuters.com/Reuters/worldNews"
+				"id":"2",
+				"title":"Jumeirah Beach",
+				"description":"Jumeira Beach is a white sand beach that is located and named after the Jumeirah district of Dubai. It stretches along the coast south of the city's historic district to the junction with The Palm Jumeirah and terminates between the southern end of the Jumeirah Beach Residence (adjacent to the Dubai Marina district) and the port facilities at Jebel Ali.The adjacent districts to the beach include Jumeirah (1, 2, & 3), Umm Suqeim (1, 2, & 3); and Al Sufouh, though colloqually, this entire string of neighborhoods and districts from the southern edge of Kerama to the terminus of the Palm Jumeirah at Knowledge Village is sometimes referred to as the Jumeirah Beach Road area.The beach and its frontage feature large hotels, resorts, and housing developments, including the Burj Al Arab (Arab Tower) hotel, Wild Wadi Water Park, Jumeirah Beach Hotel, and the old-style Madinat Jumeirah, a hotel and shopping complex.",
+				"image":"img/feeds/pkg1_2.jpg",
+				"url":"'https://www.youtube.com/embed/QN-jdceWcEE'"
 			},
 			{
-				"id":"cnn",
-				"title":"CNN",
-				"description":"CNN.com delivers up-to-the-minute news and information on the latest top stories, weather, entertainment, politics and more.",
-				"image":"img/feeds/logos/cnn.jpg",
-				"url":"http://rss.cnn.com/rss/cnn_world.rss"
+				"id":"3",
+				"title":"Burj Khalifa",
+				"description":"Burj Khalifa (Arabic: برج خليفة‎, Khalifa Tower, pronounced English /ˈbɜrdʒ kəˈliːfə/), known as Burj Dubai before its inauguration, is a skyscraper in Dubai, United Arab Emirates. It is the tallest artificial structure in the world, standing 829.8 m (2,722 ft).",
+				"image":"img/feeds/pkg1_3.jpg",
+				"url":"'https://youtu.be/3F3BG5a9SUA'"
 			},
 			{
-				"id":"the-guardian",
-				"title":"The Guardian",
-				"description":"Latest World news, comment and analysis from the Guardian, the world's leading liberal voice",
-				"image":"img/feeds/logos/the-guardian.jpg",
-				"url":"http://www.theguardian.com/world/rss"
+				"id":"4",
+				"title":"Sheikh Zayed Road",
+				"description":"E 11 is a highway in the United Arab Emirates (UAE). The longest road in the Emirates, it stretches from Al-Silah in the Emirate of Abu Dhabi and ends in Ras al-Khaimah emirate at the Oman border, running roughly parallel to UAE's coastline along the Persian Gulf. The road forms the main artery in some emirates' main cities, where it assumes various alternate names — Sheikh Maktoum Road in Abu Dhabi, Sheikh Zayed Road in Dubai, and Sheikh Muhammad bin Salem.",
+				"image":"img/feeds/pkg1_4.jpg",
+				"url":"'https://youtu.be/OPyw_q238pE'"
 			}
 		]
 	},
 	{
-		"id":"sports",
-		"title":"Sports",
-		"image":"img/feeds/sports.jpg",
+		"id":"2",
+		"title":"Emirates City Tour (500 AED)",
+		"image":"img/feeds/logos/pkg6.jpg",
+		"price":500,
+		"category":"Fun",
+		"feed_sources":[
+			{
+				"id":"techcrunch",
+				"title":"TechCrunch",
+				"description":"Startup and Technology News",
+				"image":"img/feeds/logos/techcrunch.jpg",
+				"url":"http://feeds.feedburner.com/TechCrunch/social"
+			},
+			{
+				"id":"techradar",
+				"title":"Techradar",
+				"description":"Get all the latest tech news from Techradar.com",
+				"image":"img/feeds/logos/techradar.jpg",
+				"url":"http://feeds2.feedburner.com/techradar/allnews"
+			},
+			{
+				"id":"cnet",
+				"title":"CNET",
+				"description":"CNET news editors and reporters provide top technology news, with investigative reporting and in-depth coverage of tech issues and events",
+				"image":"img/feeds/logos/cnet.jpg",
+				"url":"http://www.cnet.com/rss/news/"
+			}
+		]
+	}
+	,
+	{
+		"id":"3",
+		"title":"Emirates Desert Tour (700 AED)",
+		"image":"img/feeds/logos/pkg2.jpg",
+		"price":700,
+		"category":"Fun",
 		"feed_sources":[
 			{
 				"id":"the-guardian",
 				"title":"The Guardian",
 				"description":"Latest news and features from theguardian.com, the world's leading liberal voice",
-				"image":"img/feeds/logos/the-guardian.jpg",
+				"image":"img/feeds/logos/pkg2.jpg",
 				"url":"http://www.theguardian.com/sport/rss"
 			},
 			{
@@ -70,9 +105,11 @@
 		]
 	},
 	{
-		"id":"business",
-		"title":"Business",
-		"image":"img/feeds/business.jpg",
+		"id":"4",
+		"title":"Emirates Ferrrai World Tour (900 AED)",
+		"image":"img/feeds/logos/pkg3.jpg",
+		"price":900,
+		"category":"Adventure",
 		"feed_sources":[
 			{
 				"id":"forbes",
@@ -105,9 +142,11 @@
 		]
 	},
 	{
-		"id":"entertainment",
-		"title":"Entertainment",
-		"image":"img/feeds/entertainment.jpg",
+		"id":"5",
+		"title":"Emirates Ski Dubai Tour (1000 AED)",
+		"image":"img/feeds/logos/pkg4.jpg",
+		"price":1000,
+		"category":"Adventure",
 		"feed_sources":[
 			{
 				"id":"the-hollywood-reporter",
@@ -133,9 +172,11 @@
 		]
 	},
 	{
-		"id":"politics",
-		"title":"Politics",
-		"image":"img/feeds/politics.jpg",
+		"id":"6",
+		"title":"Emirates Wonder Bus Tours (400 AED)",
+		"image":"img/feeds/logos/pkg5.jpg",
+		"price":400,
+		"category":"Fun",
 		"feed_sources":[
 			{
 				"id":"the-nation",
@@ -157,34 +198,6 @@
 				"description":"Reuters.com is your source for breaking news, business, financial and investing news, including personal finance and stocks. Reuters is the leading global provider of news, financial information and technology solutions to the world's media, financial institutions, businesses and individuals.",
 				"image":"img/feeds/logos/reuters.jpg",
 				"url":"http://feeds.reuters.com/Reuters/PoliticsNews"
-			}
-		]
-	},
-	{
-		"id":"technology",
-		"title":"Technology",
-		"image":"img/feeds/technology.jpg",
-		"feed_sources":[
-			{
-				"id":"techcrunch",
-				"title":"TechCrunch",
-				"description":"Startup and Technology News",
-				"image":"img/feeds/logos/techcrunch.jpg",
-				"url":"http://feeds.feedburner.com/TechCrunch/social"
-			},
-			{
-				"id":"techradar",
-				"title":"Techradar",
-				"description":"Get all the latest tech news from Techradar.com",
-				"image":"img/feeds/logos/techradar.jpg",
-				"url":"http://feeds2.feedburner.com/techradar/allnews"
-			},
-			{
-				"id":"cnet",
-				"title":"CNET",
-				"description":"CNET news editors and reporters provide top technology news, with investigative reporting and in-depth coverage of tech issues and events",
-				"image":"img/feeds/logos/cnet.jpg",
-				"url":"http://www.cnet.com/rss/news/"
 			}
 		]
 	}

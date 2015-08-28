@@ -249,10 +249,11 @@ angular.module('your_app_name', [
   })
 
   .state('app.forms', {
-    url: "/forms",
+    url: "/explore",
     views: {
       'menuContent': {
-        templateUrl: "views/app/forms.html"
+        templateUrl: "views/app/forms.html",
+        controller: 'FormCtrl'
       }
     }
   })
@@ -267,11 +268,21 @@ angular.module('your_app_name', [
   })
 
   .state('app.bookmarks', {
-    url: "/bookmarks",
+    url: "/booking",
     views: {
       'menuContent': {
         templateUrl: "views/app/bookmarks.html",
         controller: 'BookMarksCtrl'
+      }
+    }
+  })
+
+  .state('app.bookmarks_', {
+    url: "/flightresult",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/flightresult.html",
+        controller: 'FlightSearchResultCtrl'
       }
     }
   })
