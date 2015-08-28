@@ -16,7 +16,12 @@
           </div>
         </div>
       </div>
-      <map center="{{center_position.lat}},{{center_position.lng}}" zoom="15">
+      <map zoom="18" center="1135 Karamea-Kohaihai Rd, Kahurangi National Park, Tasman">
+        <street-view-panorama container="streetview">
+        </street-view-panorama>
+      </map>
+      <div id="streetview"></div>
+      <!-- <map center="{{center_position.lat}},{{center_position.lng}}" zoom="15">
         <marker
             position="{{current_position.lat}},{{current_position.lng}}"
             title="Hello Marker"
@@ -32,7 +37,7 @@
             <img style=" border-radius: 24px;" src="http://lorempixel.com/50/50/food/?v=3"></img>
           </div>
         </info-window>
-      </map>
+      </map> -->
     </div>
   </ion-content>
 </ion-view>
