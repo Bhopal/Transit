@@ -6,67 +6,10 @@
     <span>Explore Dubai</span>
   </ion-nav-title>
   <ion-content>
-    <!-- <ul class="list">
-      <div class="item item-divider">Inline Labels</div>
-      
-      <label class="item item-input">
-        <span class="input-label">First Name</span>
-        <input type="text">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Last Name</span>
-        <input type="text">
-      </label>
-      <label class="item item-input">
-        <span class="input-label">Email</span>
-        <input type="email">
-      </label>
-
-      <div class="item item-divider">Floating Labels</div>
-
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Telephone</span>
-        <input type="tel" placeholder="Your phone">
-      </label>
-      <label class="item item-input item-floating-label">
-        <span class="input-label">Number</span>
-        <input type="number" placeholder="Some number">
-      </label>
-
-      <div class="item item-divider">Stacked Labels</div>
-
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Birth date</span>
-        <input type="date">
-      </label>
-      <label class="item item-input item-stacked-label">
-        <span class="input-label">Month</span>
-        <input type="month">
-      </label>
-
-      <div class="item item-divider">Placeholder Labels</div>
-
-      <label class="item item-input">
-        <textarea placeholder="Description"></textarea>
-      </label>
-      <label class="item item-input">
-        <input type="password" placeholder="Your password">
-      </label>
-
-      <div class="item item-divider">Inset Inputs</div>
-
-      <div class="item item-input-inset">
-        <label class="item-input-wrapper">
-          <input type="text" placeholder="Search...">
-        </label>
-        <button class="button button-small">
-          Submit
-        </button>
-      </div>
-    </ul> -->
+    
     <div class="card">
-      <div class="item item-text-wrap">
-        Welcome to dubai. Explore Dubai's top Location from here.
+      <div class="item item-text-wrap extra-pad">
+        Welcome to dubai. Explore Dubai's top Location's Street View from here.
       </div>
     </div>
 
@@ -75,7 +18,7 @@
             <div class="div1">
                 <div ng-repeat="obj in destnHead">
                     <a class="item item-thumbnail-left" ng-click="loadMap(obj)" title="{{obj.name}}">
-                        <img src="img/explore/{{obj.imgSrc}}">
+                        <img src="img/explore/{{obj.imgSrc}}" alt="{{obj.name}}">
                     </a>
                 </div>
             </div>

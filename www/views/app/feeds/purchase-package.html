@@ -1,0 +1,99 @@
+<ion-view class="feed-entries-view package-purchase-map-direction">
+  <ion-nav-title>
+    <span>Road Trip with StreetView</span>
+  </ion-nav-title>
+  <ion-content> 
+    <div class="list">
+      <label class="item item-input">
+        <span class="input-label">Origin</span>
+        <input type="text" placeholder="Origin" ng-model="mapcenter.name" ng-disabled="drivingMode">
+      </label>
+      <label class="item item-input">
+        <span class="input-label">Destination</span>
+        <input type="text" placeholder="Destination" ng-model="mapdestn.name" ng-disabled="drivingMode">
+      </label>
+      <label class="item range">
+        <span class="input-label">Driving Speed</span>
+
+          <i class="icon ion-minus-round"></i>
+          <input type="range" name="volume" ng-model="drivingSpeed">
+          <i class="icon ion-plus-round"></i>
+          <span class="input-label">{{drivingSpeed}} km / hour</span>
+      </label>
+
+      
+      <label class="item item-input">
+        <button ng-click="drive()" class="button button-full button-positive">
+          {{drivingMode ?  'Stop' : 'Start Driving' }}
+        </button
+      </label>
+    </div>
+  
+  
+    <div class="row">
+      <div class="col driver-path">
+           <map zoom="10" center="" tilt="45">
+          <directions 
+            draggable="true"
+            panel="directions-panel"
+            origin="{{origin}}"
+            on-directions_changed="directionsChanged(evt)"
+            destination="{{destination}}">
+          </directions>
+          <street-view-panorama container="streetview"></street-view-panorama>
+          <marker ng-repeat="pos in markers" position="{{[pos.lat(), pos.lng()]}}"></marker>
+         </map> 
+      </div>
+    </div>
+      <div class="row">
+        <div class="col street-view">
+              <div class="full-height" id="streetview"></div> 
+        </div>
+      </div>
+    </div>
+
+    <!-- <div class="row">
+        <div class="col col-100">
+            <div id="directions-panel" ng-show="showDirectionsPanel" style="display:inline-block;width:90%"></div>
+        </div>
+    </div> -->
+    
+  <!-- <div class="half">
+    <label>Origin:</label> 
+    <input places-auto-complete ng-model="origin" size=40 ng-disabled="drivingMode" /> <br/>
+    <label>Destination: </label>
+    <input places-auto-complete ng-model="destination" ng-disabled="drivingMode" size=40 /> <br/>
+    <label>Driving Speed :</label> 
+    <input ng-model="drivingSpeed" type="range" ng-disabled="drivingMode"> {{drivingSpeed}} km / hour<br/>
+  </div> -->
+  <!-- <div class="half">
+    <button ng-click="drive()" style="width: 200px;font-size:1em">
+      {{drivingMode ?  'Stop' : 'Start Driving' }}
+    </button> <br/>
+    <input type="radio" ng-model="driverMode" ng-value="true"> Driver Mode
+    <input type="radio" ng-model="driverMode" ng-value="false"> Passenger Mode
+  </div>
+  <br style="clear:both" /> -->
+  <!-- <div class="half" style="height: 70%;">
+    <br/>
+    <map zoom="18" center="1135 Karamea-Kohaihai Rd, Kahurangi National Park, Tasman" tilt="45">
+      <directions 
+        draggable="true"
+        panel="directions-panel"
+        origin="{{origin}}"
+        on-directions_changed="directionsChanged(evt)"
+        destination="{{destination}}">
+      </directions>
+      <street-view-panorama container="streetview"></street-view-panorama>
+      <marker ng-repeat="pos in markers" position="{{[pos.lat(), pos.lng()]}}"></marker>
+     </map>
+  </div>
+  <div class="half" style="height: 70%;">
+    <div class="full-height" id="streetview"></div> 
+  </div>
+  <br style="clear:both" />
+  <a href="" ng-click="showDirectionsPanel = !showDirectionsPanel">{{showDirectionsPanel ? 'Hide' : 'Show'}} Detailed Directions</a>
+  <br style="clear:both" />
+  <div id="directions-panel" ng-show="showDirectionsPanel" style="display:inline-block;width:90%"></div> -->
+  </ion-content>
+</ion-view>

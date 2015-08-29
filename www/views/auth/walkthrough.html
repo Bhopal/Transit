@@ -1,12 +1,34 @@
-<ion-view class="walkthrough-view" cache-view="false">
+<!-- <ion-view class="slider-view">
+  <ion-nav-title>
+    <span>Slider</span>
+  </ion-nav-title>
   <ion-content scroll="false">
-    <div class="top-content row">
-      <div class="col col-center">
-        <img ng-src="img/logo.png">
+    <ion-slide-box show-pager="true">
+      <ion-slide ng-repeat="i in [1,2,3,4,5]">
+        <div class="list card">
+          <div class="item item-image">
+            <img ng-src="http://lorempixel.com/300/200/nature?v={{i}}">
+          </div>
+          <div class="item item-body">
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </div>
+        </div>
+      </ion-slide>
+    </ion-slide-box>
+  </ion-content>
+</ion-view> -->
+
+
+ <ion-view class="walkthrough-view" cache-view="false" style="margin-top:-25%;">
+  <ion-content scroll="false">
+     <div class="top-content">
+      <div class="col" style="height: 100%;
+    width: 50%;">
+        <img ng-src="img/logo.png" style="height: 50%;">
       </div>
     </div>
     <div class="bottom-content row">
-      <div class="col col-center">
+      <div class="col col-center" style="margin-top: 45%;">
         <a class="login button button-block button-stable" ui-sref="auth.login">
           Log In
         </a>
@@ -14,7 +36,7 @@
           Sign Up
         </a>
       </div>
-    </div>
+    </div> 
 
    
   </ion-content>

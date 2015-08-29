@@ -1,7 +1,9 @@
 angular.module('your_app_name.controllers', [])
 
-.controller('AuthCtrl', function($scope, $ionicConfig) {
-
+.controller('AuthCtrl', function($scope, $ionicConfig,$ionicSlideBoxDelegate) {
+ $scope.navSlide = function(index) {
+        $ionicSlideBoxDelegate.slide(index, 20);
+    }
 })
 
 // APP
@@ -64,6 +66,230 @@ angular.module('your_app_name.controllers', [])
 	};
 })
 
+.controller('CategoriesCtrl', function($scope, $state) {
+	$scope.options =[
+		{id:1, name:"Adventure", desc:"Skydive over Palm Jumeirah, go water skiing around The World, paddleboard along the coast or swim with dolphins and sharks.", imgSrc:""},
+		{id:2, name:"Entertainment", desc:"If you’re coming to Dubai looking for excitement and new experiences, then you’re headed in the right direction.", imgSrc:""},
+		{id:3, name:"Events and Exhibitions", desc:"Every district in Dubai is distinct and has its own special characteristics. The city’s arterial Sheikh Zayed Road is a skyscraper corridor lined with architectural marvels.", imgSrc:""},
+		{id:4, name:"Food", imgSrc:"", desc:"With more than 5,400 eateries, foodies — and everyone else — are spoiled for choice here. And restaurateurs aren’t slowing down."},
+		{id:5, name:"Hotels", desc:"Dubai is one of the world’s premier destinations, and our hotels, resorts and hotel apartments are a large reason.", imgSrc:""},
+		{id:6, name:"Spas", desc:"If you’re looking to shake off the jet lag, jump-start a health kick or simply experience the desert heat through a hot stone massage, Dubai has a spa for you.", imgSrc:""},
+		{id:7, name:"Shopping", desc:"In Dubai’s grandiose malls, traditional souks and hip boutiques, shoppers are sure to discover something special.", imgSrc:""},
+		{id:8, name:"Sports", desc:"Dubai’s world-class tennis courts, golf courses and fitness clubs are ready to witness your personal best.", imgSrc:""},
+		
+	];
+})
+
+.controller('CategoryByIdCtrl', function($scope, $state, $stateParams) {
+	/*$scope.options =[
+		{id:1, name:"Adventure", desc:"Skydive over Palm Jumeirah, go water skiing around The World, paddleboard along the coast or swim with dolphins and sharks.", imgSrc:""},
+		{id:2, name:"Entertainment", desc:"If you’re coming to Dubai looking for excitement and new experiences, then you’re headed in the right direction.", imgSrc:""},
+		{id:3, name:"Events and Exhibitions", desc:"Every district in Dubai is distinct and has its own special characteristics. The city’s arterial Sheikh Zayed Road is a skyscraper corridor lined with architectural marvels.", imgSrc:""},
+		{id:4, name:"Food", imgSrc:"", desc:"With more than 5,400 eateries, foodies — and everyone else — are spoiled for choice here. And restaurateurs aren’t slowing down."},
+		{id:5, name:"Hotels", desc:"Dubai is one of the world’s premier destinations, and our hotels, resorts and hotel apartments are a large reason.", imgSrc:""},
+		{id:6, name:"Spas", desc:"If you’re looking to shake off the jet lag, jump-start a health kick or simply experience the desert heat through a hot stone massage, Dubai has a spa for you.", imgSrc:""},
+		{id:7, name:"Shopping", desc:"In Dubai’s grandiose malls, traditional souks and hip boutiques, shoppers are sure to discover something special.", imgSrc:""},
+		{id:8, name:"Sports", desc:"Dubai’s world-class tennis courts, golf courses and fitness clubs are ready to witness your personal best.", imgSrc:""},
+		
+	];*/
+	$scope.id = $stateParams.id;
+	$scope.name = $stateParams.name;
+	$scope.data = [];
+
+	/*$scope.data[1] = [{"","","",""];*/
+
+
+})
+
+//this method brings posts for a source provider
+.controller('FeedEntriesCtrl', function($scope, $stateParams, $http, FeedList, $q, $ionicLoading, BookMarkService) {
+	var data = [];
+	data[0] = {id:0,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+	data[1] = {id:1,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+	data[2] = {id:2,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+	data[3] = {id:3,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+	data[4] = {id:4,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+	data[5] = {id:5,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+	data[6] = {id:6,center:{lat: 25.2528, lng: 55.3644},dest:{lat: 25.191964, lng: 55.277456} };
+
+	
+	var select = data[$stateParams.catId];
+	$scope.mapcenter= {lat: select.center.lat, lng: select.center.lng};
+	$scope.mapdestn= {lat: select.dest.lat, lng: select.dest.lng};
+	$scope.catId = select.id;
+
+})
+
+.controller('PurchagePackageCtrl', function($scope, $stateParams, $timeout) {
+	var data = [];
+
+
+	data[0] = {id:0,center:{lat: 25.191964, lng: 55.277456, name:"Dubai Museum, Dubai"},dest:{lat: 25.2586, lng: 55.3264, name:"Deira Clock Tower, Dubai"} };
+	data[1] = {id:1,center:{lat: 25.191964, lng: 55.277456, name:"Burj Khalifa, Dubai"},dest:{lat: 25.2586, lng: 55.3264, name:"Deira Clock Tower, Dubai"} };
+	data[2] = {id:2,center:{lat: 25.2528, lng: 55.3644, name:"Burj Khalifa, Dubai"},dest:{lat: 25.191964, lng: 55.277456, name:"Dubai Museum, Dubai"} };
+	data[3] = {id:3,center:{lat: 25.2528, lng: 55.3644, name:"Deira Clock Tower, Dubai"},dest:{lat: 25.191964, lng: 55.277456, name:"Burj Khalifa, Dubai"} };
+	data[4] = {id:4,center:{lat: 25.2528, lng: 55.3644, name:"Burj Khalifa, Dubai"},dest:{lat: 25.191964, lng: 55.277456, name:"Dubai Museum, Dubai"} };
+	data[5] = {id:5,center:{lat: 25.2528, lng: 55.3644, name:"Burj Khalifa, Dubai"},dest:{lat: 25.191964, lng: 55.277456, name:"Deira Clock Tower, Dubai"} };
+	data[6] = {id:6,center:{lat: 25.2528, lng: 55.3644, name:"Burj Khalifa, Dubai"},dest:{lat: 25.191964, lng: 55.277456, name:"Dubai Museum, Dubai"} };
+
+
+	var select = data[$stateParams.catId];
+	$scope.mapcenter= {lat: select.center.lat, lng: select.center.lng, name:select.center.name};
+	$scope.mapdestn= {lat: select.dest.lat, lng: select.dest.lng, name:select.dest.name};
+	$scope.catId = select.id;
+
+	//Controller Actual code to Drive Automated
+	$scope.drivingMode = false; // indicates streetview should be on driving mode
+    $scope.drivingSpeed = 120; // 100 km per hour
+    $scope.driverMode = false;
+
+    //$scope.origin = "1135 Karamea-Kohaihai Rd, Kahurangi National Park, Tasman";
+    //$scope.destination = "Pier St, Jackson Bay, West Coast, New Zeland";
+    $scope.origin = $scope.mapcenter;
+    $scope.destination = $scope.mapdestn;
+
+
+  var map;
+  var updateFrequency = 1*1000; // half a second
+  var savedPath = null;  // position and count to restart from pause mode
+
+  // Overview path between orign and destination. 
+  // This does NOT exactly follow the path of a road. It is used to draw path on the map.
+  var overviewPath=[]; 
+  var overviewPathIndex=0;  // current index points of overview path
+
+  // Detailed path between overview path points
+  // This does exactly follow the path of a road. 
+  var detailedPath=[];
+  var detailedPathIndex=0;  // current index points of detailed path
+
+  var directionsService = new google.maps.DirectionsService();
+
+  //
+  // At google's mercy, we get points to drive
+  //
+  var driveOverviewPaths = function() {
+    var op1, op2;
+    // drive detailed path because we have not drove through all 
+    if (detailedPath.length > detailedPathIndex) { 
+      driveDetailedPaths(); //SHOW TIME !!!!
+    }
+    // drove all detailed path, get a new detailed path from overview paths
+    else { 
+      op1 = overviewPath[overviewPathIndex];
+      op2 = overviewPath[overviewPathIndex+1];
+      overviewPathIndex += 1;
+      if (op1 && op2) {
+        var request ={origin:op1, destination:op2, travelMode: 'DRIVING'};
+        directionsService.route(request, function(response, status) {
+          if (status == google.maps.DirectionsStatus.OK) {
+            detailedPath = response.routes[0].overview_path;
+            console.log('Updated detailedPath for overviewpath between',
+              overviewPathIndex, 'and', overviewPathIndex+1,
+              'with', detailedPath.length, 'geo points');
+            detailedPathIndex = 0;
+            driveOverviewPaths();
+          } 
+        });
+      }
+    } 
+  };
+
+  //
+  // drive between two points by meter by meter and show it.
+  //
+  var driveDetailedPaths = function() {
+    var meter = Math.floor(
+      (parseInt($scope.drivingSpeed, 10) * 1000) / 3600  // how far we deive every second
+      * (updateFrequency/1000));                         // how often do we see streetview
+    var point1 = detailedPath[detailedPathIndex];
+    var point2 = detailedPath[detailedPathIndex+1];
+
+    if (point1 && point2) {
+      //calculate where to look from two points
+      var heading = google.maps.geometry.spherical.computeHeading(point1, point2);
+      var distance = google.maps.geometry.spherical.computeDistanceBetween(point1, point2);
+      var totalCount = parseInt(distance / meter, 10) || 1;
+
+      var drive = function(count, position) {
+        console.log(overviewPathIndex + '/' + overviewPath.length, 
+          detailedPathIndex + '/' + detailedPath.length, 
+          count + '/' + totalCount, 'distance', meter);
+        if (totalCount >= count) {
+          $timeout( function() {
+            var pov = map.getStreetView().getPov();
+            if ($scope.driverMode) {
+              map.setHeading(heading); // map heading is different from pov heading
+              pov.heading = heading;
+            }
+
+            map.getStreetView().setPosition(position);
+            map.getStreetView().setPov(pov);
+            map.getStreetView().setVisible(true);
+
+            var distanceToPoint2 = google.maps.geometry.spherical.computeDistanceBetween(position, point2);
+            var nextPosition = distanceToPoint2 < meter ? 
+              point2 : google.maps.geometry.spherical.computeOffset(position, meter, heading);
+            if ($scope.drivingMode) {
+              drive(++count, nextPosition);
+            } else {
+              savedPath = {count: count, position: position};
+              return false;
+            }
+          }, updateFrequency);
+        } else {
+          detailedPathIndex += 1;
+          $scope.$emit('driveOverviewPath');
+        } 
+      };
+
+      var count = (savedPath && savedPath.count) || 1;
+      var position = (savedPath && savedPath.position) || point1;
+      savedPath = null; // once start driving, nullify savedPath
+      drive(count, position);
+
+    } else {
+      detailedPathIndex += 1;
+      $scope.$emit('driveOverviewPath');
+    }
+  };
+
+  $scope.$on('driveOverviewPath', function() { 
+    driveOverviewPaths();
+  });
+
+  $scope.drive = function() {
+    $scope.drivingMode = !$scope.drivingMode;
+    if ($scope.drivingMode) {
+      map.setZoom(16);
+      if (savedPath) { // if continues
+        driveDetailedPaths();
+      } else {
+        $scope.$emit('driveOverviewPath');
+      }
+    }
+  };
+
+  // When direction is changed
+  // change overviewPath and reset driving directions
+  $scope.directionsChanged = function() {
+    overviewPath = this.directions.routes[0].overview_path; 
+    console.log('direction is changed', 'got overviewPath with', overviewPath.length, 'points');
+    map.getStreetView().setPosition(overviewPath[0]);
+
+    overviewPathIndex = 0; // set indexes to 0s
+    detailedPathIndex = 0;
+    $scope.drivingMode = false;   // stop driving
+    toContinue = null;     // reset continuing positon
+  }
+
+  $scope.$on('mapInitialized', function(e, _map_) {
+    map = _map_;
+    window.map = map;
+  });
+
+})
+
 .controller('FormCtrl', function($scope) {
 	$scope.destnHead = [
 		{name:'Burj Khalifa', longitude:25.191964, latitude:55.277456, imgSrc:'burj-khalifa.jpg'},
@@ -104,6 +330,23 @@ angular.module('your_app_name.controllers', [])
 
 })
 
+
+.controller('CityTourCtrl', function($scope) {
+	/*$scope.sendMail = function(){
+		cordova.plugins.email.isAvailable(
+			function (isAvailable) {
+				// alert('Service is not available') unless isAvailable;
+				cordova.plugins.email.open({
+					to:      'envato@startapplabs.com',
+					cc:      'hello@startapplabs.com',
+					// bcc:     ['john@doe.com', 'jane@doe.com'],
+					subject: 'Greetings',
+					body:    'How are you? Nice greetings from IonFullApp'
+				});
+			}
+		);
+	};*/
+})
 
 .controller('SendMailCtrl', function($scope) {
 	$scope.sendMail = function(){
@@ -281,45 +524,6 @@ $scope.showPopup = function(url) {
 })
 
 
-//this method brings posts for a source provider
-.controller('FeedEntriesCtrl', function($scope, $stateParams, $http, FeedList, $q, $ionicLoading, BookMarkService) {
-	$scope.feed = [];
-
-	var categoryId = $stateParams.categoryId,
-			sourceId = $stateParams.sourceId;
-
-	$scope.doRefresh = function() {
-
-		$http.get('feeds-categories.json').success(function(response) {
-
-			$ionicLoading.show({
-				template: 'Loading entries...'
-			});
-
-			var category = _.find(response, {id: categoryId }),
-					source = _.find(category.feed_sources, {id: sourceId });
-
-			$scope.sourceTitle = source.title;
-
-			FeedList.get(source.url)
-			.then(function (result) {
-				$scope.feed = result.feed;
-				$ionicLoading.hide();
-				$scope.$broadcast('scroll.refreshComplete');
-			}, function (reason) {
-				$ionicLoading.hide();
-				$scope.$broadcast('scroll.refreshComplete');
-			});
-		});
-	};
-
-	$scope.doRefresh();
-
-	$scope.bookmarkPost = function(post){
-		$ionicLoading.show({ template: 'Post Saved!', noBackdrop: true, duration: 1000 });
-		BookMarkService.bookmarkFeedPost(post);
-	};
-})
 
 // SETTINGS
 .controller('SettingsCtrl', function($scope, $ionicActionSheet, $state) {

@@ -1,34 +1,25 @@
-<ion-view class="feed-entries-view">
+<ion-view class="feed-entries-view explore-deal-map-direction">
   <ion-nav-title>
-    <span>{{sourceTitle}}</span>
+    <span>Navigation Path</span>
   </ion-nav-title>
-  <ion-content>
-    <!-- Refresh to get the new posts -->
-    <ion-refresher pulling-text="Pull to refresh..." on-refresh="doRefresh()">
-    </ion-refresher>
-
-    <div class="entries-list">
-      <div ng-repeat="entry in feed.entries" class="list card entry-item">
-        <div class="entry-heading item item-text-wrap">
-          <h2 class="entry-title" ng-bind-html="entry.title | rawHtml"></h2>
-          <p class="entry-author">
-            Published <span>{{ entry.publishedDate | parseDate | amTimeAgo }}</span>
-          </p>
+  <ion-content> 
+        <div class="row dir-wrapper">
+           <div class="map-path">
+                <map zoom="12" center="">
+                <directions 
+                  draggable="true"
+                  panel="directions-panel"
+                  travel-mode="DRIVING"
+                  origin="{{mapcenter}}"
+                  destination="{{mapdestn}}">
+                </directions>
+              </map> 
+                <!-- Directions path length:
+                {{map.directionsRenderers[0].directions.routes[0].overview_path.length}} km -->
+           </div>
+           <div class="map-dir">
+                <div id="directions-panel" class="dir-panel"></div>
+           </div>
         </div>
-        <div class="entry-content item item-text-wrap">
-          <p class="entry-excerpt" dynamic-anchor-fix ng-bind-html="entry.contentSnippet | rawHtml"></p>
-          <div class="entry-actions row">
-            <div class="actions col col-center col-66">
-              <a class="button button-icon icon ion-bookmark" ng-click="bookmarkPost(entry)"></a>
-            </div>
-            <div class="read-more col col-center col-33" dynamic-anchor-fix>
-              <a class="button button-small button-block button-assertive" ng-href="{{entry.link}}">
-                Read more
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
   </ion-content>
 </ion-view>

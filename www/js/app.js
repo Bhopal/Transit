@@ -197,11 +197,31 @@ angular.module('your_app_name', [
   })
 
   .state('app.feed-entries', {
-    url: "/feed-entries/:categoryId/:sourceId",
+    url: "/feed-entries/:catId/explore",
     views: {
       'menuContent': {
         templateUrl: "views/app/feeds/feed-entries.html",
         controller: 'FeedEntriesCtrl'
+      }
+    }
+  })
+
+  .state('app.purchase-package', {
+    url: "/feed-entries/:catId/purchase-package",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/feeds/purchase-package.html",
+        controller: 'PurchagePackageCtrl'
+      }
+    }
+  })
+
+  .state('app.city-tour', {
+    url: "/feed-entries/city-tour",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/city-tour.html",
+        controller: 'CityTourCtrl'
       }
     }
   })
@@ -254,6 +274,26 @@ angular.module('your_app_name', [
       'menuContent': {
         templateUrl: "views/app/forms.html",
         controller: 'FormCtrl'
+      }
+    }
+  })
+
+  .state('app.categories', {
+    url: "/categories",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/categories.html",
+        controller: 'CategoriesCtrl'
+      }
+    }
+  })
+
+  .state('app.categorybyid', {
+    url: "/category/:id",
+    views: {
+      'menuContent': {
+        templateUrl: "views/app/category-by-id.html",
+        controller: 'CategoryByIdCtrl'
       }
     }
   })
